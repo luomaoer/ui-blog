@@ -1,85 +1,38 @@
-# Markdown Extension Examples
+# TButton 按钮组件(内置防抖功能)
 
-This page demonstrates some of the built-in markdown extensions provided by VitePress.
+### 基础用法
 
-## Syntax Highlighting
-
-VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shikijs/shiki), with additional features like line-highlighting:
-
-**Input**
-
-````md
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-````
-
-**Output**
-
-```js{4}
-export default {
-  data () {
-    return {
-      msg: 'Highlighted!'
-    }
-  }
-}
-```
-
-## Custom Containers
-
-**Input**
-
-```md
-::: info
-This is an info box.
+:::demo `继承el-button所有属性` 新增`time`属性（多少时间内点击；默认 1 秒）
+TButton/base
 :::
 
-::: tip
-This is a tip.
+### 提示文字
+
+:::demo 使用 `type、size、tip、icon`和`placement`属性来定义 Button 的样式；
+TButton/tip
 :::
 
-::: warning
-This is a warning.
+### 是否需要防抖
+
+:::demo 通过设置  `isDebounce` ，可以选择是否开启防抖，默认为true
+TButton/isDebounce
 :::
 
-::: danger
-This is a dangerous warning.
-:::
+### 2、配置参数（Attributes）继承 el-button Attributes
 
-::: details
-This is a details block.
-:::
-```
+| 参数      | 说明                                                         | 类型                                                 | 默认值 |
+| :-------- | :----------------------------------------------------------- | :--------------------------------------------------- | :----- |
+| size      | 尺寸                                                         | 'large' / 'default' / 'small'                        | -      |
+| type      | 类型                                                         | 'default / 'primary / 'success / 'warning / 'danger' | -      |
+| plain     | 是否朴素按钮                                                 | boolean                                              | false  |
+| round     | 是否圆角按钮                                                 | boolean                                              | false  |
+| circle    | 是否圆形按钮                                                 | boolean                                              | false  |
+| time      | 防抖的时间                                                   | number                                               | 1000   |
+| isDebounce| 是否开启防抖                                                   | boolean                                               | true   |
+| tip       | 提示文字，常用于 type="text" 或拥有 text，link 属性的 button | string                                               | -      |
+| placement | Tooltip 组件出现的位置                                       | 继承 el-tooltip                                      | top    |
+| tipProps  | Tooltip 组件的配置参数，详情可看 element-plus 官网           | object                                               | -      |
 
-**Output**
+### placement 类型
 
-::: info
-This is an info box.
-:::
-
-::: tip
-This is a tip.
-:::
-
-::: warning
-This is a warning.
-:::
-
-::: danger
-This is a dangerous warning.
-:::
-
-::: details
-This is a details block.
-:::
-
-## More
-
-Check out the documentation for the [full list of markdown extensions](https://vitepress.dev/guide/markdown).
+> 'top' / 'top-start' / 'top-end' / 'bottom' / 'bottom-start' / 'bottom-end' / 'left' / 'left-start' / 'left-end' / 'right' / 'right-start' / 'right-end'
