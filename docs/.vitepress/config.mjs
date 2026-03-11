@@ -1,10 +1,15 @@
 import { defineConfig } from 'vitepress'
-
+import { mdPlugin } from './plugins/demo' 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/ui-blog/',
   title: "My Awesome Project",
   description: "A VitePress Site",
+  markdown: {
+    lineNumbers: true,
+    config: (md) => mdPlugin(md)
+  },
+  
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

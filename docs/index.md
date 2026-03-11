@@ -12,7 +12,7 @@ hero:
       link: /markdown-examples
     - theme: alt
       text: API Examples
-      link: /api-examples
+      link: /components/TButton/base.md
 
 features:
   - title: Feature A
